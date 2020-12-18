@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@300;400;500&family=Sacramento&display=swap" rel="stylesheet">
   </head>
   <body>
-    
+    <!-- Custom confirmation alert -->
     <div id="dialogOverlay"></div>
 		<div id="dialogBox">
 			<div>
@@ -32,6 +32,7 @@
     <hr>
     <h2>Harness the power of the web for your business</h2>
     <h3 class="form-heading medium-line">Send Us A Message</h3>
+    <!-- Contact form -->
     <form id="contactForm" action="" method="post" enctype="text/plain">
       <ul>
           <li>
@@ -59,33 +60,27 @@
           </li>
        </ul>
     </form>
-    <!------------------------   JavaScript References   ---------------------->
+    <!---------------------------   JavaScript References   ------------------------->
     <script type="text/javascript">							
-			// ----------------------------------------------------------------
-      // Name: CustomAlert
-      // Abstract: Custom alert for confirmation message 
-      // ----------------------------------------------------------------
-      // Script-level variables
-					
-      var m_Alert = new CustomAlert();
-      var m_strErrorMessage = "Please correct the following error:" + "<br />";	
-			var m_strConfirmationMessage = "Message received!\n" + "<br />" +
-				"We will contact you by Email within 24 hours." + "<br />" +
-        "Thank you for contacting us about our web services.\n";
+      // Custom confirmation alert		
+      let confirmationAlert = new CustomAlert();
+			const ConfirmationMessage = "Message received!" + "<br />" +
+				"We will reply to you by Email within 24 hours." + "<br />" +
+        "We look forward to the opportunity of working with you.";
 
 			function CustomAlert()
 			{
-          var windowWidth = window.innerWidth;
-          var windowHeight = window.innerHeight;
-          																		
+          let windowWidth = window.innerWidth;
+          let windowHeight = window.innerHeight;
+          /* Create dialog */
 					this.render = function(dialog)
 					{					
-						var dialogOverlay = document.getElementById("dialogOverlay");
-						var dialogBox     = document.getElementById("dialogBox");
-						var dialogBoxHead = document.getElementById("dialogBoxHead");
-						var dialogBoxBody = document.getElementById("dialogBoxBody");
-						var dialogBoxFoot = document.getElementById("dialogBoxFoot");
-            var btnSubmit     = document.getElementById("btnSubmit");
+						let dialogOverlay = document.getElementById("dialogOverlay");
+						let dialogBox     = document.getElementById("dialogBox");
+						let dialogBoxHead = document.getElementById("dialogBoxHead");
+						let dialogBoxBody = document.getElementById("dialogBoxBody");
+					  let dialogBoxFoot = document.getElementById("dialogBoxFoot");
+            let btnSubmit     = document.getElementById("btnSubmit");
 						
 						dialogOverlay.style.display = "block";
 						dialogBox.height = windowHeight +"px";											
@@ -94,14 +89,21 @@
 						dialogBox.style.top = "500px";											
 						dialogBoxHead.innerHTML = "Trillium Web Solutions";
 						dialogBoxBody.innerHTML = dialog;
-						dialogBoxFoot.innerHTML = '<button style="height:20px;width:50px;background-color:#11cdd4;" onclick="m_Alert.ok()">OK</button>';			
+						dialogBoxFoot.innerHTML = '<button style="height:20px;width:50px;background-color:#11cdd4;" onclick="confirmationAlert.ok()">OK</button>';			
 						btnSubmit.style.disabled = "true";
-					}					
+					}
+          /* OK button click */					
 					this.ok = function()
-					{												
+					{	
+            /* Hide dialog */											
 						document.getElementById("dialogBox").style.display = "none";
             document.getElementById("dialogOverlay").style.display = "none";
-            m_strErrorMessage = "";	
+            /* Reset form */            
+            document.getElementById('name').value='';
+            document.getElementById('company').value=''; 
+            document.getElementById('phone').value='';           
+            document.getElementById('email').value=''; 
+            document.getElementById('msg').value='';            
           } 
       }
     </script>
