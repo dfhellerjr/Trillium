@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Trillium Contact</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles2.css">
+    <link rel="icon" href="trillium.ico">
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@300;400;500&family=Sacramento&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    
+    <div id="dialogOverlay"></div>
+		<div id="dialogBox">
+			<div>
+				<div id="dialogBoxHead"></div>
+				<div id="dialogBoxBody"></div>
+				<div id="dialogBoxFoot"></div>
+			</div>
+    </div>
+  
+    <div class="contact-header">
+        <a class="btn btn-home" href="index.html">HOME</a>
+        <h1>Contact Details</h1>
+    </div>    
+    <div class="info">
+      <p>Address: 604 Duval St, Key West, Florida 33041</p>
+      <p>Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TrilliumSolutions@gmail.com</p>
+      <p>Phone:&nbsp;&nbsp;&nbsp;&nbsp;(305)999-8888</p>
+    </div>
+    <hr>
+    <h2>Harness the power of the web for your business</h2>
+    <h3 class="form-heading medium-line">Send Us A Message</h3>
+    <form id="contactForm" action="" method="post" enctype="text/plain">
+      <ul>
+          <li>
+            <label for="name">Name:<span class="asterix">*</span></label>
+            <input type="text" class="no-focus" id="name" name="user_name" placeholder="Required">
+          </li>
+          <li>
+            <label for="company">Company:<span class="asterix">*</span></label>
+            <input type="text" class="no-focus" id="company" name="company_name" placeholder="Required">
+          </li>
+          <li>
+            <label for="phone">Phone:</label>
+            <input type="text" class="no-focus" id="phone" name="user_phone">
+          </li>
+          <li>
+            <label for="email">Email:<span class="asterix">*</span></label>
+            <input type="email" class="no-focus" id="email" name="user_email" placeholder="Required">
+          </li>
+          <li>
+            <label for="msg">Message:<span class="asterix">*</span></label>
+            <textarea class="no-focus" id="msg" name="user_message" placeholder="Your thoughts   (200 char max)"></textarea>
+          </li>
+          <li>
+            <input class="btn submit" type="button" name="submit" value="Send" onclick="return formValidator()">
+          </li>
+       </ul>
+    </form>
+    <!------------------------   JavaScript References   ---------------------->
+    <script type="text/javascript">							
+			// ----------------------------------------------------------------
+      // Name: CustomAlert
+      // Abstract: Custom alert for confirmation message 
+      // ----------------------------------------------------------------
+      // Script-level variables
+					
+      var m_Alert = new CustomAlert();
+      var m_strErrorMessage = "Please correct the following error:" + "<br />";	
+			var m_strConfirmationMessage = "Message received!\n" + "<br />" +
+				"We will contact you by Email within 24 hours." + "<br />" +
+        "Thank you for contacting us about our web services.\n";
+
+			function CustomAlert()
+			{
+          var windowWidth = window.innerWidth;
+          var windowHeight = window.innerHeight;
+          																		
+					this.render = function(dialog)
+					{					
+						var dialogOverlay = document.getElementById("dialogOverlay");
+						var dialogBox     = document.getElementById("dialogBox");
+						var dialogBoxHead = document.getElementById("dialogBoxHead");
+						var dialogBoxBody = document.getElementById("dialogBoxBody");
+						var dialogBoxFoot = document.getElementById("dialogBoxFoot");
+            var btnSubmit     = document.getElementById("btnSubmit");
+						
+						dialogOverlay.style.display = "block";
+						dialogBox.height = windowHeight +"px";											
+						dialogBox.style.display = "block";
+						dialogBox.style.left = (windowWidth/2) - (550 * .5)+"px";
+						dialogBox.style.top = "500px";											
+						dialogBoxHead.innerHTML = "Trillium Web Solutions";
+						dialogBoxBody.innerHTML = dialog;
+						dialogBoxFoot.innerHTML = '<button style="height:20px;width:50px;background-color:#11cdd4;" onclick="m_Alert.ok()">OK</button>';			
+						btnSubmit.style.disabled = "true";
+					}					
+					this.ok = function()
+					{												
+						document.getElementById("dialogBox").style.display = "none";
+            document.getElementById("dialogOverlay").style.display = "none";
+            m_strErrorMessage = "";	
+          } 
+      }
+    </script>
+    <script src="scripts/validateData.js"></script>
+    <script src="scripts/formValidator.js"></script>        
+  </body>
+</html>

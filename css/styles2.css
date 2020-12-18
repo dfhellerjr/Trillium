@@ -1,0 +1,188 @@
+body
+{
+  font-family: "Merriweather", serif;
+  color: #40514E;
+  font-weight: 300;
+  line-height: 1.6;
+  /* default font size: 16px */
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background: -webkit-gradient( linear, left top, left bottom, from(#eafaf7), to(#6edec9));
+  background: -o-linear-gradient( #eafaf7, #6edec9);
+  background: linear-gradient( #eafaf7, #6edec9);
+}
+.btn-home 
+{
+  position: absolute;
+  top: 2rem;
+  left: 4rem;
+}
+h1 
+{
+  margin-top: -8rem;
+  text-decoration: underline;
+}
+.info
+{
+  margin: 0 auto;
+}
+p
+{
+  font-size: 2rem;
+  text-align: left;
+  padding-left: 34%;
+}
+h2
+{  
+  color: #11999E;
+  margin-top: -40px;
+  font-family: "Montserrat";
+  font-size: 2.75rem;
+  font-style: italic;
+}
+form
+{
+  width: 40rem;
+  /* Form outline */
+  padding: 2rem 1rem 2rem 0rem;
+  border: 1px solid darkgreen;
+  background-color: #eaf2fa;
+  border-radius: 1em;
+  margin: 0 auto 5rem;
+}
+ul
+{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+form li + li
+{
+  margin-top: 1rem;
+}
+label
+{
+  /* Uniform size & alignment */
+  display: inline-block;
+  width: 9rem;
+}
+.asterix
+{
+  color: red;
+  vertical-align: super;
+  font-size: 1rem;
+}
+::placeholder
+{
+  font-size: 1.5rem;
+  color: red;
+}
+input,
+textarea
+{
+  /* Uniform text field size */
+  width: 27rem;
+  height: 3rem;
+  /* Match form field borders */
+  border-style: groove;
+  border-width: 2px;
+  border-top-color: white;
+  border-left-color: white;
+  border-bottom-color: #A8A8A8;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  padding-left: .5rem;
+}
+input:focus,
+textarea:focus
+{
+  /* Additional highlight for focused elements */
+  border-color: red;;
+}
+.no-outline:focus 
+{
+  outline: none;
+}
+textarea
+{
+  /* Align multiline text fields with their labels */
+  vertical-align: top;
+  /* Provide space to type some text */
+  height: 10rem;
+  padding-top: .5rem;
+}
+input[type=button].submit
+{
+  height: 2rem;
+  width: 15rem;
+  margin-top: 1.5rem;
+  margin-left: 5rem;
+  background-color: #11cdd4;
+  background-image: -webkit-linear-gradient(top, #11cdd4, #11999E);
+  background-image: -moz-linear-gradient(top, #11cdd4, #11999E);
+  background-image: -ms-linear-gradient(top, #11ccd4, #11999E);
+  background-image: -o-linear-gradient(top, #11cdd4, #11999E);
+  background-image: linear-gradient(to bottom, #11cdd4, #11999E);
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  color: #fff;
+  padding: 10px 10px 10px 0px;
+  box-shadow: 1px 1px 10px 0px #000000;
+  -webkit-box-shadow: 1px 1px 10px 0px #000000;
+  -moz-box-shadow: 1px 1px 10px 0px #000000;
+  text-shadow: 1px 1px 10px #000000;
+  border: solid #11999E 1px;
+}
+
+/* Custom alert box */
+#dialogOverlay
+{
+  display: none;
+  opacity: 0.8;				
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: #FFF;
+  width: 100%;					
+  z-index: 10;				
+}
+#dialogBox
+{
+  display: none;
+  position: absolute;
+  background: #000;
+  border-radius: 7px;
+  width: 550px;
+  z-index: 100;			
+}
+#dialogBox > div 
+{
+  background: #FFF;
+  margin: 8px;
+}
+#dialogBox > div > #dialogBoxHead
+{
+  background: #11999E;
+  font-size: 19px;
+  padding: 10px;
+  color: #000033;			
+}
+#dialogBox > div > #dialogBoxBody
+{
+  background:#333;
+  padding: 20px;
+  color: #FFF;			
+}
+#dialogBox > div > #dialogBoxFoot
+{
+  background:#11999E;
+  padding: 10px;
+  text-align: right;			
+}
+
