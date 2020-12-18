@@ -1,18 +1,15 @@
-
 function formValidator()
 {    
     // Return variable
-	var blnIsValid = true;
+	let blnIsValid = true;
     
     // User inputs
-	var name    = document.getElementById('name');
-	var company = document.getElementById('company');
-	var phone   = document.getElementById('phone');
-    var email   = document.getElementById('email');
-    var msg     = document.getElementById('msg');
-
-
-       	
+	let name    = document.getElementById('name');
+    let company = document.getElementById('company');
+	let phone   = document.getElementById('phone');
+    let email   = document.getElementById('email');
+    let msg     = document.getElementById('msg');
+      	
 	// Trim
     TrimInputs();
 
@@ -41,10 +38,8 @@ function formValidator()
         }             
 	}
     else
-    {	
-        
-        ErrorMsg = "Name can not be blank.";
-        
+    {	        
+        ErrorMsg = "Name can not be blank.";       
         alert(ErrorMsg);
 		name.focus();
         blnIsValid = false;
@@ -77,9 +72,7 @@ function formValidator()
     else
     {	
 		ErrorMsg = "Company can not be blank.";
-        //alert(ErrorMsg);
-        m_strErrorMessage +=ErrorMsg;
-        m_Alert.render(m_strErrorMessage);  
+        alert(ErrorMsg);     
 		company.focus();
         blnIsValid = false;
         return blnIsValid;
@@ -165,21 +158,8 @@ function formValidator()
 
     if (blnIsValid == true)
     {
-        m_Alert.render(m_strConfirmationMessage);
+        confirmationAlert.render(ConfirmationMessage);
     }
-    // Bad input data?
-    /*
-    if (blnIsValid == false)
-    {
-        m_Alert.render(ErrorMsg);
-    }
-    else
-    {						
-        // Custom alert			
-        m_Alert.render(m_strConfirmationMessage);						
-    }
-    */
-
 }
  
 
