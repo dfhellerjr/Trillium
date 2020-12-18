@@ -1,11 +1,10 @@
-
 // Trim textboxes & text area
 function TrimInputs()
 {   
-    var intIndex = 0
-	var currentElement = null;	
-    var length = document.getElementsByTagName('input').length;
-    var msg = document.getElementById('msg');
+    let intIndex = 0
+	let currentElement = null;	
+    let length = document.getElementsByTagName('input').length;
+    let msg = document.getElementById('msg');
  
 	for( intIndex = 0; intIndex < length; intIndex += 1 ) 
 	{
