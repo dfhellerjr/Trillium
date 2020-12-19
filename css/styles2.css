@@ -113,6 +113,18 @@ textarea
   height: 10rem;
   padding-top: .5rem;
 }
+.req 
+{
+  margin-top: .75rem;
+  font-size: 1.3rem;
+  margin-left: -3rem;
+  font-weight: 500;
+}
+.asterix2
+{
+  color: red;
+  margin-right: .75rem;
+}
 input[type=button].submit
 {
   height: 2rem;
@@ -139,7 +151,6 @@ input[type=button].submit
   text-shadow: 1px 1px 10px #000000;
   border: solid #11999E 1px;
 }
-
 /* Custom alert box */
 #dialogOverlay
 {

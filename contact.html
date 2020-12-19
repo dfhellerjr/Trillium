@@ -37,11 +37,11 @@
       <ul>
           <li>
             <label for="name">Name:<span class="asterix">*</span></label>
-            <input type="text" class="no-focus" id="name" name="user_name" placeholder="Required">
+            <input type="text" class="no-focus" id="name" name="user_name">
           </li>
           <li>
             <label for="company">Company:<span class="asterix">*</span></label>
-            <input type="text" class="no-focus" id="company" name="company_name" placeholder="Required">
+            <input type="text" class="no-focus" id="company" name="company_name">
           </li>
           <li>
             <label for="phone">Phone:</label>
@@ -49,12 +49,13 @@
           </li>
           <li>
             <label for="email">Email:<span class="asterix">*</span></label>
-            <input type="email" class="no-focus" id="email" name="user_email" placeholder="Required">
+            <input type="email" class="no-focus" id="email" name="user_email">
           </li>
           <li>
             <label for="msg">Message:<span class="asterix">*</span></label>
-            <textarea class="no-focus" id="msg" name="user_message" placeholder="Your thoughts   (200 char max)"></textarea>
+            <textarea class="no-focus" id="msg" name="user_message" placeholder="(200 char max)"></textarea>
           </li>
+          <p class="req"><span class="asterix2">*</span>Required Fields</p>
           <li>
             <input class="btn submit" type="button" name="submit" value="Send" onclick="return formValidator()">
           </li>
